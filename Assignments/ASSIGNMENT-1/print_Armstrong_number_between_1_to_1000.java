@@ -1,10 +1,5 @@
 
-import java.util.Scanner;
-
 public class print_Armstrong_number_between_1_to_1000 {
-
-    static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
 
         boolean a;
