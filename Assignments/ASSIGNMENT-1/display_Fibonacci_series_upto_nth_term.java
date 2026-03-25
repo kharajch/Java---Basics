@@ -11,7 +11,7 @@ public class display_Fibonacci_series_upto_nth_term {
         System.out.print("Enter n : ");
         n = sc.nextInt();
 
-        System.out.println("The Fibonacci Series Upto " + n + "Term :");
+        System.out.println("The Fibonacci Series Upto " + n + "th Term :");
 
         for (int i = 0; i <= n; i++) {
             f = fib(i);
