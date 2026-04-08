@@ -1,0 +1,2 @@
+1. WAP In Java to create a class named rectangle with 2 data members - length and width (both of type float), Include methods to calculate the area and perimeter of the rectangle, Create two Rectangle Objects in main method set their attributes and print the area and perimeter
+2.WAP in Java to create a class named BankAccount with attributes accountNumber (str) and balance (float). Use appropriate access modifiers ( private, public ) for these attributes public methods to deposit and withdraw money.
