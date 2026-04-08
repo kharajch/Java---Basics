@@ -4,8 +4,8 @@ import java.util.Scanner;
 class BankAccount {
     public static Scanner sc = new Scanner(System.in);
 
-    public String accountNumber;
-    public float balance;
+    private String accountNumber;
+    private float balance;
 
     public BankAccount() {
 
@@ -14,14 +14,6 @@ class BankAccount {
     public BankAccount(String a, float b) {
         this.accountNumber = a;
         this.balance = b;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public void setBalance(float balance) {
-        this.balance = balance;
     }
 
     public void Deposit() {
@@ -37,8 +29,7 @@ class BankAccount {
         if (w < balance) {
             balance -= w;
             System.out.print("Account Balance : " + balance);
-        }
-        else {
+        } else {
             System.err.println("Insufficient Balance To Withdraw!!");
         }
     }

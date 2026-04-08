@@ -3,10 +3,10 @@
 
 class Rectangle {
 
-    public float length;
-    public float width;
-    public float area;
-    public float perimeter;
+    float length;
+    float width;
+    float area;
+    float perimeter;
 
     public Rectangle() {
     }
