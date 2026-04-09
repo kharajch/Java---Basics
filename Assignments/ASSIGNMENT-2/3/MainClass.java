@@ -6,7 +6,7 @@ import java.util.Scanner;
 class Student {
     String name;
     int rollnumber;
-    String grade;
+    char grade;
 
     public Student() {
 
@@ -18,23 +18,21 @@ class Student {
 
     }
 
-    public Student(String n, int r, String g) {
+    public Student(String n, int r, char g) {
         name = n;
         rollnumber = r;
         grade = g;
 
     }
 
-    public String getName() {
-        return name;
+    public void setdata(String name, int rollnumber, char grade) {
+        this.name = name;
+        this.rollnumber = rollnumber;
+        this.grade = grade;
     }
 
-    public int getRollnumber() {
-        return rollnumber;
-    }
-
-    public String getGrade() {
-        return grade;
+    public void setdata(char grade) {
+        this.grade = grade;
     }
 
 }
@@ -45,34 +43,50 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        Student s1 = new Student();
-        System.err.println("Student 1 Details :");
-        System.out.println("Name : " + s1.name);
-        System.out.println("Roll No. : " + s1.rollnumber);
-        System.out.println("Grade : " + s1.grade);
+        int op;
+        System.out.printf(
+                "1. Using Default Constructor. \n 2. Using Constructor With Name And Roll No. \n 3. Using Constructor With Name, Roll Number And Grade. \n Enter Option : ");
 
-        System.err.println("");
-        System.err.println("Student 2 Details :");
-        Student s2 = new Student("Kharaj Chakraborty", 12345678);
-        System.out.println("Name : " + s2.name);
-        System.out.println("Roll No. : " + s2.rollnumber);
-        System.out.println("Grade : " + s2.grade);
+        op = sc.nextInt();
 
-        System.out.println("");
-        System.err.println("Enter Student 3 Details :");
-        System.out.print("Name : ");
-        String n = sc.next();
-        System.out.print("Roll Number : ");
-        int r = sc.nextInt();
-        System.out.print("Grade : ");
-        String g = sc.next();
+        switch (op) {
+            case 1:
+                Student s1 = new Student();
+                System.err.println("Enter Student Details :");
+                System.out.print("Name : ");
+                String n1 = sc.next();
+                System.out.print("Roll Number : ");
+                int r1 = sc.nextInt();
+                System.out.print("Grade : ");
+                char g1 = sc.next().charAt(0);
+                s1.setdata(n1, r1, g1);
+                System.err.println("Student Details :");
+                System.out.println("Name : " + s1.name);
+                System.out.println("Roll Number : " + s1.rollnumber);
+                System.out.println("Grade : " + s1.grade);
+                break;
+            case 2:
+                Student s2 = new Student("Kharaj Chakraborty", 1234567);
+                System.err.println("Enter Student Details :");
+                System.out.print("Grade : ");
+                char g2 = sc.next().charAt(0);
+                s2.setdata(g2);
+                System.err.println("Student Details :");
+                System.out.println("Name : " + s2.name);
+                System.out.println("Roll Number : " + s2.rollnumber);
+                System.out.println("Grade : " + s2.grade);
+                break;
+            case 3:
+                Student s3 = new Student("Kharaj Chakraborty", 1234567, 'O');
+                System.err.println("Student Details :");
+                System.out.println("Name : " + s3.name);
+                System.out.println("Roll Number : " + s3.rollnumber);
+                System.out.println("Grade : " + s3.grade);
+                break;
 
-        System.out.println("");
-        System.err.println("Enter Student 3 Details :");
-        Student s3 = new Student(n, r, g);
-        System.out.println("Name : " + s3.name);
-        System.out.println("Roll No. : " + s3.rollnumber);
-        System.out.println("Grade : " + s3.grade);
+            default:
+                throw new AssertionError();
+        }
 
     }
 }
