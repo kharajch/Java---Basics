@@ -21,7 +21,7 @@ public class MainClass {
         Counter c2 = new Counter();
         Counter c3 = new Counter();
 
-        System.out.println("The Number Of Objects Created Are : " + c3.count);
+        System.out.println("The Number Of Objects Created Are : " + c3.getCount());
 
     }
 }

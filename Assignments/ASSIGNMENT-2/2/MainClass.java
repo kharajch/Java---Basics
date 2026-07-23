@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 class BankAccount {
@@ -45,7 +44,7 @@ public class MainClass {
         System.out.print("Enter Account Number : ");
         String acc = sc.next();
         System.out.print("Enter Balance : ");
-        Float bala = sc.nextFloat();
+        float bala = sc.nextFloat();
 
         BankAccount a1 = new BankAccount(acc, bala);
 

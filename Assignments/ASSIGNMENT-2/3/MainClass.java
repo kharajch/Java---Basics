@@ -1,31 +1,31 @@
-
 import java.util.Scanner;
 
 // 3.WAP in Java to create a class named Student with attributes name (str), rollnumber (Short) and grade (char). Implement Multiple Constructor : a default constructor, a constructor that takes name and roll number, a constructor that takes all three values, create different shortcut objects using different constructor and point their details.
 
 class Student {
     String name;
-    int rollnumber;
+    short rollnumber;
     char grade;
 
     public Student() {
-
+        this.name = "";
+        this.rollnumber = 0;
+        this.grade = 'U';
     }
 
-    public Student(String n, int r) {
-        name = n;
-        rollnumber = r;
-
+    public Student(String name, short rollnumber) {
+        this.name = name;
+        this.rollnumber = rollnumber;
+        this.grade = 'U';
     }
 
-    public Student(String n, int r, char g) {
-        name = n;
-        rollnumber = r;
-        grade = g;
-
+    public Student(String name, short rollnumber, char grade) {
+        this.name = name;
+        this.rollnumber = rollnumber;
+        this.grade = grade;
     }
 
-    public void setdata(String name, int rollnumber, char grade) {
+    public void setdata(String name, short rollnumber, char grade) {
         this.name = name;
         this.rollnumber = rollnumber;
         this.grade = grade;
@@ -35,6 +35,12 @@ class Student {
         this.grade = grade;
     }
 
+    public void displayDetails() {
+        System.out.println("Student Details :");
+        System.out.println("Name : " + this.name);
+        System.out.println("Roll Number : " + this.rollnumber);
+        System.out.println("Grade : " + this.grade);
+    }
 }
 
 public class MainClass {
@@ -43,50 +49,42 @@ public class MainClass {
 
     public static void main(String[] args) {
 
-        int op;
         System.out.printf(
-                "1. Using Default Constructor. \n 2. Using Constructor With Name And Roll No. \n 3. Using Constructor With Name, Roll Number And Grade. \n Enter Option : ");
+                "1. Using Default Constructor.\n2. Using Constructor With Name And Roll No.\n3. Using Constructor With Name, Roll Number And Grade.\nEnter Option : ");
 
-        op = sc.nextInt();
+        int op = sc.nextInt();
+        sc.nextLine();
 
         switch (op) {
             case 1:
                 Student s1 = new Student();
-                System.err.println("Enter Student Details :");
+                System.out.println("Enter Student Details :");
                 System.out.print("Name : ");
-                String n1 = sc.next();
+                String n1 = sc.nextLine();
                 System.out.print("Roll Number : ");
-                int r1 = sc.nextInt();
+                short r1 = sc.nextShort();
+                sc.nextLine();
                 System.out.print("Grade : ");
-                char g1 = sc.next().charAt(0);
+                char g1 = sc.nextLine().charAt(0);
                 s1.setdata(n1, r1, g1);
-                System.err.println("Student Details :");
-                System.out.println("Name : " + s1.name);
-                System.out.println("Roll Number : " + s1.rollnumber);
-                System.out.println("Grade : " + s1.grade);
+                s1.displayDetails();
                 break;
             case 2:
-                Student s2 = new Student("Kharaj Chakraborty", 1234567);
-                System.err.println("Enter Student Details :");
-                System.out.print("Grade : ");
-                char g2 = sc.next().charAt(0);
+                Student s2 = new Student("Kharaj Chakraborty", (short) 1234);
+                System.out.print("Enter Grade : ");
+                char g2 = sc.nextLine().charAt(0);
                 s2.setdata(g2);
-                System.err.println("Student Details :");
-                System.out.println("Name : " + s2.name);
-                System.out.println("Roll Number : " + s2.rollnumber);
-                System.out.println("Grade : " + s2.grade);
+                s2.displayDetails();
                 break;
             case 3:
-                Student s3 = new Student("Kharaj Chakraborty", 1234567, 'O');
-                System.err.println("Student Details :");
-                System.out.println("Name : " + s3.name);
-                System.out.println("Roll Number : " + s3.rollnumber);
-                System.out.println("Grade : " + s3.grade);
+                Student s3 = new Student("Kharaj Chakraborty", (short) 1234, 'O');
+                s3.displayDetails();
                 break;
-
             default:
-                throw new AssertionError();
+                System.out.println("Invalid option. Please select 1, 2 or 3.");
+                break;
         }
 
+        sc.close();
     }
 }
